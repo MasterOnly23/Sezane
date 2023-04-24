@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+<script> $(function(){
+    $('#myTable').tablesorter(); 
+  });
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.widgets.js" integrity="sha256-U+0DXO4scYcNVpt7pnud6Fx3KZqK2I5mI6KOeAjSqOE="
+crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="{% static '/css/tablesorter.css' %}">
+<script src="{% static '/js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.js" integrity="sha256-serXvhbeEKdQIfTFSD3wpNCGNx2+/9py7VXfwLhYTfk="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.widgets.js" integrity="sha256-U+0DXO4scYcNVpt7pnud6Fx3KZqK2I5mI6KOeAjSqOE="
+        crossorigin="anonymous"></script>
+
+        <style>
+            .container-tabla{
+                display: flex;
+                justify-content: center;
+            }
+            .agregar-nuevo{
+              display: flex;
+              justify-content: flex-start;
+              margin-left: 3rem;
+              margin-bottom: 3rem;
+            }
+        </style>
+
+{% if msg %}
+
+        
+    <div class="alert alert-danger" role="alert">
+        Registro Eliminado
+    </div>
+
+    {% endif %}
+
+    <div class="agregar-nuevo">
+      <a href="{% url 'agregar' %}" class="btn btn-success">Agregar Prenda</a>
+    </div>
+
+    <div class="col-12 container-tabla">
+
+<table class="table table-striped tablesorter" id="myTable">
+    <thead>
+      <tr>
+        <th scope="col" style="visibility: hidden;"></th>
+        <th scope="col" class="sort">Prenda<i class="fa-solid fa-sort"></i></th>
+        <th scope="col" class="sort">Talla</th>
+        <th scope="col" class="sort">Color</th>
+        <th scope="col" class="sort">Cantidad</th>
+        <!-- <th scope="col" class="sort">Link Drive</th> -->
+
+        <th scope="col" class="th-edit" style="visibility: hidden;"></th>
+        <th scope="col" class="th-delete" style="visibility: hidden;"></th>
+      </tr>
+    </thead>
+    <tbody id="tablaFicales">
+        {% for prenda in prendas %}
+
+      <tr>
+        <th scope="row" class="td-data"></th>
+        <td class="nro-fiscal">{{ prenda.prenda }}</td>
+        <td>{{ prenda.talla }}</td>
+        <td>{{ prenda.color }}</td>
+        <td>{{ prenda.cantidad }}</td>
+        <!-- <td>{{ fiscal.punto_venta }}</td> -->
+
+        <td><a href="{% url 'editar' prenda.id %}" class="btn btn-warning">Editar</a></td>
+        <td><a href="{% url 'eliminar' prenda.id %}" class="btn btn-danger">Eliminar</a></td>
+        <!-- agregamos un mensaje para que el usuario sepa que el objeto se elimino -->
+        
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+ <script src="{% static '/js/sortTable.js' %}"></script>
+  <script src="{% static '/js/sortDate.js' %}"></script>
+
+
+
+
+
+  {% endblock %}

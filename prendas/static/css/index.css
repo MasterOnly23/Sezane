@@ -1,0 +1,21 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.titulo img {
+    width: 750px;
+}
+
+.btn-prendas{
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.btn-success{
+    background-color: #0A3D38;
+}

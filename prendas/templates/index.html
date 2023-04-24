@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEZANE</title>
+
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.widgets.js" integrity="sha256-U+0DXO4scYcNVpt7pnud6Fx3KZqK2I5mI6KOeAjSqOE="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static '/css/tablesorter.css' %}">
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.js" integrity="sha256-serXvhbeEKdQIfTFSD3wpNCGNx2+/9py7VXfwLhYTfk="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div class="titulo">
+        <img src="{% static '/img/logo.jpg' %}" alt="SEZANE">
+    </div>
+
+
+    <div class="btn-prendas">
+     <div class="btn">
+          <a href="{% url 'prendas' %}"><button class="btn btn-success">Lista de prendas</button></a>
+       </div>
+        <!-- <div class="btn">
+           <a href=""><button class="btn btn-success">Tanga</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Cachetero</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Top Clasico</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Top Deportivo</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Short</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Duo Clasico</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Duo Deportivo</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Duo Short</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Trio</button></a>
+        </div>
+        <div class="btn">
+             <a href=""><button class="btn btn-success">Boxer</button></a>
+        </div> -->
+    </div>
+
+</body>
+</html>

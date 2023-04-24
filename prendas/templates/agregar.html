@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+{% if form.errors %}
+
+<div class="alert alert-danger" role="alert">
+    Alert - ERROR!
+</div>
+
+{% endif %}
+
+
+<div>
+    <div class="row col-12 justify-content-end mb-2 pr-0">
+        <!-- <button type="button" class="btn btn-success col-md-2">Agregar Nuevo</button> -->
+        <a href="{% url 'prendas' %}" class="btn btn-success col-md-3">Lista de Prendas</a>
+    </div>
+</div>
+
+<main>
+
+  <section>
+
+    <form action="{% url 'guardar' %}" method="post">
+
+        {% csrf_token %} <!--elemento de seguridad-->
+
+        {% if msgOK %}
+
+            <div class="alert alert-success" role="alert">
+                Registro Completado
+            </div>
+
+        {% endif %}
+
+        {{ form.as_p }}
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+    </form>
+  </section>  
+  
+
+
+</main>
+
+
+
+{% endblock %}
